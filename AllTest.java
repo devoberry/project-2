@@ -41,20 +41,28 @@ public class AllTest {
 		 * createByTitleList
 		 */
 	public void testTitleList(){
-		
-		Episodes testEp = Driver.parseEpisode("\"Star Trek Continues\" (2013) {(#1.7)}			2016");
-		Series testSeries = Driver.parseSeries("\"Star Trek Dark Armada\" (2006)				2006-????");
-		Movie testMov = Driver.parseMovie("'Star Trek: Deep Space Nine': Behind the Scenes (1993) (V)  1993");
+		Episodes testEp = new Episodes ("Star Trek Continues", "Come Not Between the Dragons", 2016, 1, 7, null, null);
+		Series testSeries = new Series ("Star Trek Dark Armada", 2006, null, null, "????", null);
+		Movie testMov = new Movie ("'Star Trek: Deep Space Nine': Behind the Scenes", 1993, "(V)");
 		ArrayList<Media> allThings = new ArrayList<Media>();
 		allThings.add(testEp);
 		allThings.add(testSeries);
 		allThings.add(testMov);
 		
+		for(int i = 0; i < allThings.size(); ++i){
+			System.out.println(allThings.get(i).getTitle() );
+		}
+		System.out.println("");
 		Driver.sortByTitleList(allThings);
 		
-		assertEquals("\"Star Trek Continues\"",allThings.get(0).getTitle());
-		assertEquals("\"Star Trek Dark Armada\"", allThings.get(1).getTitle());
-		assertEquals("'Star Trek: Deep Space Nine': Behind the Scenes", allThings.get(2).getTitle());
+		for(int i = 0; i < allThings.size(); ++i){
+			
+			System.out.println(allThings.get(i).getTitle());
+		}
+		
+		assertEquals("'Star Trek: Deep Space Nine': Behind the Scenes", allThings.get(0).getTitle());
+		assertEquals("Come Not Between the Dragons", allThings.get(1).getTitle());
+		assertEquals("Star Trek Dark Armada", allThings.get(2).getTitle());
 		
 	}
 		
@@ -72,7 +80,7 @@ public class AllTest {
 		allThings.add(testMov);
 		
 		for(int i = 0; i<allThings.size(); ++i){
-			System.out.println(allThings.get(i).getTitle());
+			System.out.println(allThings.get(i).getReleaseYear());
 		}
 		
 		Driver.sortByYearList(allThings);
