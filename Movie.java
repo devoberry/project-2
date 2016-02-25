@@ -11,10 +11,7 @@
  */
 
 public class Movie extends Media {
-	/** Stores the title of the Movie*/
-	//private String title;
-	/** Stores the releaseYear of the Movie*/
-	//private Integer releaseYear;
+
 	/** Stores ???? if releaseYear is unknown */
 	private String unknownYear;
 	/** Stores the duplicate/version of the Movie*/
