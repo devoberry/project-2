@@ -11,10 +11,7 @@ import java.util.ArrayList;
  *
  */
 public class Series extends Media{
-	/** Stores the title of the Series*/
-	//private String title;
-	/** Stores the releaseYear of the Series*/
-	//private Integer releaseYear;
+	
 	/** Stores the endYear of the Series*/
 	private Integer endYear;
 	/**Stores an Array of all Episodes in a Series*/
