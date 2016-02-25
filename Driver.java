@@ -342,8 +342,61 @@ public class Driver {
 	 *  @param inputs - an Array of inputs that the user has entered
 	 *  @return foundMedia - a String with every media matching the inputs on a new line
 	 */
-	public static String search(String [] inputs){
+	public static String search(){
 		//TODO: create various statements for searching MediaList
+		String firstQ = "";
+		String secondQ = "";
+		String thirdQseries = "";
+		String titleQ = "";
+		String inputTitle = "";
+		String inputYears = "";
+		String sortPref = "";
+		
+		Scanner inputs = new Scanner(System.in);
+		//Prompt
+		System.out.println("Search (m)ovies, (s)eries, or (b)oth?");
+		firstQ = inputs.nextLine();
+		
+		System.out.println("Search (t)itle, (y)ear, or (b)oth?");
+		secondQ = inputs.nextLine();
+		
+		if((firstQ.equalsIgnoreCase("s") || firstQ.equalsIgnoreCase("b")) && 
+				(secondQ.equalsIgnoreCase("t") || secondQ.equalsIgnoreCase("b"))){
+			
+			System.out.println("Include episode titles in search and output (y/n)?");
+			thirdQseries = inputs.nextLine();
+		}
+		
+		
+		if((secondQ.equalsIgnoreCase("t") || secondQ.equalsIgnoreCase("b"))){
+			System.out.println("Search for (e)xact or (p)artial matches");
+			titleQ = inputs.nextLine();
+		}
+		
+		
+		if(secondQ.equalsIgnoreCase("t")){
+			System.out.println("Title?");
+			inputTitle = inputs.nextLine();
+			inputYears = "Any";
+		}
+		
+		
+		else if(secondQ.equalsIgnoreCase("y")){
+			System.out.println("Years?");
+			inputYears = inputs.nextLine();
+			inputTitle = "Any";
+		}
+		
+		else if(secondQ.equalsIgnoreCase("b")){
+			System.out.println("Title?");
+			inputTitle = inputs.nextLine();
+			System.out.println("Years?");
+			inputYears = inputs.nextLine();
+		}
+		
+		System.out.println("Sort by (t)itle or (y)ear?");
+		sortPref = inputs.nextLine();
+		
 	return null;	
 	}
 	
