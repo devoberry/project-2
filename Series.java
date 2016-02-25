@@ -53,6 +53,14 @@ public class Series extends Media{
 		return this.allEpisodes;
 	}
 	/**
+	 * this method will set an ArrayList of episodes
+	 * @param list an arraylist of episodes
+	 * 
+	 */
+	public void setEpisodes(ArrayList<Episodes> list){
+		this.allEpisodes = list;
+	}
+	/**
 	 * This method will return the last Year a Series aired on TV
 	 * @return an Integer representing the final year of a Series
 	 */
