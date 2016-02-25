@@ -9,10 +9,6 @@
 public class Episodes extends Media{
 	/** Stores the title of the Series that the Episode is stored in*/
 	private String seriesTitle;
-	/** Stores the title of the Episodes*/
-	//private String title;
-	/** Stores the releaseYear of the Episodes*/
-	//private Integer releaseYear;
 	/** Stores the season of the Episodes*/
 	private Integer season;
 	/** Stores the episodeNumber of the Episodes*/
