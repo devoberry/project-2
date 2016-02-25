@@ -292,6 +292,31 @@ public class Driver {
 		return null;
 	}
 	
+	public static void addEpsToSeries(){
+		for(int i = 0; i < series.size(); ++i){
+			ArrayList <Episodes> addMe = findEpisodes(series.get(i).getTitle());
+			series.get(i).setEpisodes(addMe);
+		}
+	}
+	
+	/**
+	 * This method creates the arraylist to add to a series for the variable Arraylist of Episodes.
+	 * 
+	 * @param seriesTitle the title of the series to compare
+	 * @return arraylist of Episodes
+	 */
+	
+	public static ArrayList<Episodes> findEpisodes (String seriesTitle){
+		//TODO: find all episodes from a static thing of episodes.
+		ArrayList<Episodes> addThese = new ArrayList<Episodes>();
+		for(int i = 0; i < episodes.size(); ++i){
+			if(episodes.get(i).getSeriesTitle().equals(seriesTitle)){
+				addThese.add(episodes.get(i));
+			}
+		}
+		return addThese;
+	}
+	
 /**<p> This method creates an ArrayList of All the Movies, Series and Episodes
 	 * so that all Media can be easily be compared and printed by title.</p>
 	 * 
